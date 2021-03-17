@@ -1,24 +1,28 @@
-import react from "react"
-import { BrowserRouter as Router,Route, Switch} from "react-router-dom";
-import Navbar from "./Routing/Navbar";
-import ContactList from "./ContactList";
-
-function App(){
-  return(
-    <>
-    <Router>
-    <Navbar/>
-    <Switch>
-    <Route exact path ="/home" component={ContactList} />
-    <Route exact path ="/aboutus" />
-    <Route exact path ="/contactlist"/>
-    <Route exact path ="/contactus" />
+import React,{useState} from "react";
+function App (){
+  const [state, setState]=useState({arr:4,theme:"blue"})
+  const arr=state.arr
+  const theme=state.theme
+  
+  function decrementArr(){
+    setState(prevState=>{
+      return {arr:prevState.arr-1}
     
-    
-    </Switch>
-
-    </Router>
-    </>
-  );
+  })
 }
+  function incrementArr(){
+    setState(prevState=>{
+      return {arr:prevState.arr+1 }
+  }) 
+}
+  return (
+    <>
+    <button onClick={decrementArr}> - </button>
+    <span>{arr}</span>
+    <span>{theme}</span>
+    <button onClick={incrementArr}>+</button>
+    </>
+  )
+  }
+ 
 export default App;
