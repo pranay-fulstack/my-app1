@@ -1,28 +1,18 @@
-import React,{useState} from "react";
-function App (){
-  const [state, setState]=useState({arr:4,theme:"blue"})
-  const arr=state.arr
-  const theme=state.theme
-  
-  function decrementArr(){
-    setState(prevState=>{
-      return {arr:prevState.arr-1}
-    
-  })
-}
-  function incrementArr(){
-    setState(prevState=>{
-      return {arr:prevState.arr+1 }
-  }) 
-}
+import React from "react";
+import Counter from "./Wish/Counter";
+import Message from "./Wish/Message"
+import Product from "./Wish/Product"
+function App () {
   return (
-    <>
-    <button onClick={decrementArr}> - </button>
-    <span>{arr}</span>
-    <span>{theme}</span>
-    <button onClick={incrementArr}>+</button>
+    <> 
+    <h1>Hello Pranay</h1>
+    <Counter/>
+    <Message/>
+    <Product/>
     </>
-  )
-  }
- 
+  ); 
+
+  
+
+};
 export default App;
