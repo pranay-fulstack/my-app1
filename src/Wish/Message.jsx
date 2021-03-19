@@ -3,7 +3,7 @@ let Message=()=>{
     let [message,setMessage]=useState("Hello");
     return (
     <>
-    <div className="container md-5">
+    <div className="container mt-5">
     <div className="row">
     <div className="col-mt-8">
     <div className="card">

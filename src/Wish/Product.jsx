@@ -27,22 +27,11 @@ let Product =()=>{
         <tbody>
         <tr>
           <td>{product.product_Name}</td>
+          <td> <img src={product.image} height="150px" width="90px" /></td>
           <td>
-            <img src={product.image} height="150px" width="90px" /></td>
-          <td>
-            <i
-              className="fa fa-minus-circle"
-              onClick={() => {
-                setProduct({ ...product, qty: product.qty - 1 });
-              }}
-            ></i>
+            <i className="fa fa-minus-circle" onClick={() => {setProduct({ ...product, qty: product.qty - 1 });}}></i>
             {product.qty}
-            <i
-              className="fa fa-plus-circle"
-              onClick={() => {
-                setProduct({ ...product, qty: product.qty + 1 });
-              }}
-            ></i>
+            <i className="fa fa-plus-circle"onClick={() => {setProduct({ ...product, qty: product.qty + 1 });}}></i>
           </td>
           <td>{product.price}</td>
           <td>{product.qty * product.price}</td>
